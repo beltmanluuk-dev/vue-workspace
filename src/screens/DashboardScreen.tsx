@@ -449,11 +449,12 @@ const styles = StyleSheet.create({
     width: 56,
     height: 56,
     borderRadius: 16,
-    backgroundColor: colors.glass,
-    borderWidth: 1,
-    borderColor: colors.glassBorder,
+    backgroundColor: colors.card,
+    borderWidth: 1.5,
+    borderColor: colors.border,
     alignItems: 'center',
     justifyContent: 'center',
+    ...shadows.button,
   },
   greeting: {
     fontSize: typography.fontSize.base,
@@ -552,6 +553,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 8,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    ...shadows.button,
   },
   quickActionText: {
     fontSize: 12,
@@ -564,8 +568,8 @@ const styles = StyleSheet.create({
   },
   seeAllText: {
     fontSize: 14,
-    fontWeight: '600',
-    color: colors.graySubtle,
+    fontWeight: '700',
+    color: colors.oceanDark,
     marginRight: 4,
   },
   insightCard: {
@@ -575,8 +579,8 @@ const styles = StyleSheet.create({
     borderRadius: 18,
     padding: 14,
     marginBottom: 10,
-    borderWidth: 1,
-    borderColor: colors.cardBorder,
+    borderWidth: 1.5,
+    borderColor: colors.cardBorderInteractive,
     ...shadows.soft,
   },
   insightIcon: {

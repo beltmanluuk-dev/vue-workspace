@@ -20,6 +20,12 @@ export interface ColorTheme {
   grayLight: string;
   grayMedium: string;
   border: string;
+  borderLight: string;
+  borderDark: string;
+  buttonBorder: string;
+  buttonSecondaryBorder: string;
+  buttonPrimaryBackground: string;
+  buttonSecondaryBackground: string;
   systemBlue: string;
   systemGreen: string;
   systemRed: string;
@@ -30,6 +36,7 @@ export interface ColorTheme {
   surface: string;
   card: string;
   cardBorder: string;
+  cardBorderInteractive: string;
   inputBackground: string;
 }
 
@@ -48,13 +55,19 @@ export const lightColors: ColorTheme = {
   rose: '#F0A5C1',
   coralDark: '#E87474',
   roseLight: '#F8B8D0',
-  glass: 'rgba(255, 255, 255, 0.35)',
-  glassBorder: 'rgba(255, 255, 255, 0.25)',
-  glassShadow: 'rgba(0, 0, 0, 0.15)',
+  glass: 'rgba(255, 255, 255, 0.55)',
+  glassBorder: 'rgba(0, 0, 0, 0.08)',
+  glassShadow: 'rgba(0, 0, 0, 0.12)',
   graySubtle: '#8B95A1',
   grayLight: '#C1C7CD',
   grayMedium: '#5A6B7C',
-  border: 'rgba(255, 255, 255, 0.3)',
+  border: 'rgba(0, 0, 0, 0.1)',
+  borderLight: 'rgba(0, 0, 0, 0.06)',
+  borderDark: 'rgba(0, 0, 0, 0.18)',
+  buttonBorder: 'rgba(0, 0, 0, 0.2)',
+  buttonSecondaryBorder: 'rgba(0, 0, 0, 0.15)',
+  buttonPrimaryBackground: '#0F0F0F',
+  buttonSecondaryBackground: '#FFFFFF',
   systemBlue: '#7A8B9E',
   systemGreen: '#A8D5BA',
   systemRed: '#F49090',
@@ -64,7 +77,8 @@ export const lightColors: ColorTheme = {
   textSecondary: '#8B95A1',
   surface: '#FAFAFA',
   card: '#FFFFFF',
-  cardBorder: 'rgba(0, 0, 0, 0.05)',
+  cardBorder: 'rgba(0, 0, 0, 0.08)',
+  cardBorderInteractive: 'rgba(0, 0, 0, 0.12)',
   inputBackground: '#F1F3F4',
 };
 
@@ -83,13 +97,19 @@ export const darkColors: ColorTheme = {
   rose: '#F0A5C1',
   coralDark: '#E87474',
   roseLight: '#3A2A30',
-  glass: 'rgba(30, 30, 30, 0.6)',
-  glassBorder: 'rgba(255, 255, 255, 0.08)',
+  glass: 'rgba(40, 40, 40, 0.7)',
+  glassBorder: 'rgba(255, 255, 255, 0.12)',
   glassShadow: 'rgba(0, 0, 0, 0.5)',
   graySubtle: '#8B95A1',
   grayLight: '#5A6B7C',
   grayMedium: '#A1AAB4',
-  border: 'rgba(255, 255, 255, 0.1)',
+  border: 'rgba(255, 255, 255, 0.15)',
+  borderLight: 'rgba(255, 255, 255, 0.08)',
+  borderDark: 'rgba(255, 255, 255, 0.22)',
+  buttonBorder: 'rgba(255, 255, 255, 0.25)',
+  buttonSecondaryBorder: 'rgba(255, 255, 255, 0.2)',
+  buttonPrimaryBackground: '#F8F9FA',
+  buttonSecondaryBackground: '#2C2C2E',
   systemBlue: '#B8C8DB',
   systemGreen: '#7FB89A',
   systemRed: '#F49090',
@@ -99,7 +119,8 @@ export const darkColors: ColorTheme = {
   textSecondary: '#8B95A1',
   surface: '#1C1C1E',
   card: '#1C1C1E',
-  cardBorder: 'rgba(255, 255, 255, 0.08)',
+  cardBorder: 'rgba(255, 255, 255, 0.1)',
+  cardBorderInteractive: 'rgba(255, 255, 255, 0.18)',
   inputBackground: '#2C2C2E',
 };
 
@@ -114,23 +135,37 @@ export const shadows = {
   glass: {
     shadowColor: colors.glassShadow,
     shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.15,
+    shadowOpacity: 0.2,
     shadowRadius: 32,
-    elevation: 8,
+    elevation: 10,
   },
   soft: {
     shadowColor: colors.glassShadow,
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.1,
-    shadowRadius: 16,
-    elevation: 4,
+    shadowOffset: { width: 0, height: 3 },
+    shadowOpacity: 0.18,
+    shadowRadius: 12,
+    elevation: 5,
   },
   medium: {
     shadowColor: colors.glassShadow,
-    shadowOffset: { width: 0, height: 6 },
+    shadowOffset: { width: 0, height: 5 },
+    shadowOpacity: 0.2,
+    shadowRadius: 20,
+    elevation: 8,
+  },
+  button: {
+    shadowColor: colors.glassShadow,
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    elevation: 4,
+  },
+  buttonPressed: {
+    shadowColor: colors.glassShadow,
+    shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.12,
-    shadowRadius: 24,
-    elevation: 6,
+    shadowRadius: 4,
+    elevation: 2,
   },
 };
 

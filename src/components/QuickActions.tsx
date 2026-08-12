@@ -102,6 +102,7 @@ const styles = StyleSheet.create({
   actionButton: {
     alignItems: 'center',
     marginRight: 4,
+    borderRadius: 18,
   },
   iconContainer: {
     width: 64,
@@ -110,11 +111,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: 8,
-    ...shadows.soft,
+    borderWidth: 1.5,
+    borderColor: colors.border,
+    ...shadows.button,
   },
   actionLabel: {
     fontSize: 12,
-    fontWeight: '500',
-    color: colors.graySubtle,
+    fontWeight: '600',
+    color: colors.primary,
   },
 });
