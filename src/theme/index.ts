@@ -36,7 +36,7 @@ export interface ColorTheme {
 export const lightColors: ColorTheme = {
   primary: '#0F0F0F',
   secondary: '#F1F3F4',
-  background: '#FF0000',
+  background: '#F8F9FA',
   mint: '#A8D5BA',
   mintDark: '#7FB89A',
   mintLight: '#C8E6D7',
@@ -71,7 +71,7 @@ export const lightColors: ColorTheme = {
 export const darkColors: ColorTheme = {
   primary: '#F8F9FA',
   secondary: '#1C1C1E',
-  background: '#8B0000',
+  background: '#0F0F0F',
   mint: '#7FB89A',
   mintDark: '#A8D5BA',
   mintLight: '#1C3328',
