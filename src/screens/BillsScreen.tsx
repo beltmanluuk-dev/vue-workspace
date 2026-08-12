@@ -14,7 +14,7 @@ import { useNavigation } from '@react-navigation/native';
 import * as LocalAuthentication from 'expo-local-authentication';
 import { BillCard, PaymentModal, CostSaverModal, BiometricPrompt, EmptyState } from '../components';
 import { useStore } from '../store';
-import { colors } from '../theme';
+import { colors, shadows } from '../theme';
 import { Bill } from '../types';
 
 type FilterType = 'all' | 'pending' | 'scheduled' | 'paid' | 'pending_approval';
