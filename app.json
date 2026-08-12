@@ -23,16 +23,7 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false
     },
-    "web": {
-      "favicon": "./assets/favicon.png",
-      "bundler": "metro",
-      "meta": {
-        "viewport": "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover",
-        "apple-mobile-web-app-capable": "yes",
-        "apple-mobile-web-app-status-bar-style": "default",
-        "apple-mobile-web-app-title": "VUE"
-      }
-    },
+,
     "platforms": ["ios", "android", "web"]
   }
 }
