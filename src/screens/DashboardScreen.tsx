@@ -56,12 +56,17 @@ export const DashboardScreen: React.FC = () => {
   useEffect(() => {
     // Elegant loading state for ClarityEngine
     const timer = setTimeout(() => {
-      runClarityEngine();
-      Animated.timing(fadeAnim, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }).start(() => setIsAnalyzing(false));
+      try {
+        runClarityEngine();
+      } catch (error) {
+        console.error('ClarityEngine error:', error);
+      } finally {
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }).start(() => setIsAnalyzing(false));
+      }
     }, 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -194,9 +199,9 @@ export const DashboardScreen: React.FC = () => {
     [bills]
   );
 
-  const unreadCount = getUnreadNotifications().length;
-  const activeInsights = getActiveInsights();
-  const budgetAlerts = getBudgetAlerts();
+  const unreadCount = useMemo(() => getUnreadNotifications().length, [getUnreadNotifications, notifications]);
+  const activeInsights = useMemo(() => getActiveInsights(), [getActiveInsights, insights]);
+  const budgetAlerts = useMemo(() => getBudgetAlerts(), [getBudgetAlerts, budgets]);
 
   const handleNotificationPress = useCallback(() => {
     navigation.navigate('Notifications');
@@ -228,7 +233,7 @@ export const DashboardScreen: React.FC = () => {
       
       {/* Elegant ClarityEngine Loading Overlay */}
       {isAnalyzing && (
-        <Animated.View style={[styles.loadingOverlay, { opacity: fadeAnim }]}>
+        <Animated.View pointerEvents="none" style={[styles.loadingOverlay, { opacity: fadeAnim }]}>
           <View style={styles.loadingCard}>
             <ActivityIndicator size="small" color={colors.primary} />
             <Text style={styles.loadingText}>Analyserar dina betalningar...</Text>

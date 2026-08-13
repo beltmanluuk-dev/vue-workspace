@@ -74,7 +74,8 @@ export class ClarityEngine {
   }
 
   public processBills(bills: Bill[]): Bill[] {
-    return bills.map((bill) => {
+    let hasChanges = false;
+    const processed = bills.map((bill) => {
       if (bill.status === 'paid' || bill.status === 'paused') {
         return bill;
       }
@@ -82,6 +83,7 @@ export class ClarityEngine {
       const deviation = this.checkDeviation(bill);
 
       if (deviation.hasDeviation && bill.status !== 'pending_approval') {
+        hasChanges = true;
         return {
           ...bill,
           status: 'pending_approval' as const,
@@ -90,6 +92,8 @@ export class ClarityEngine {
 
       return bill;
     });
+
+    return hasChanges ? processed : bills;
   }
 
   public getBillsRequiringApproval(bills: Bill[]): Bill[] {

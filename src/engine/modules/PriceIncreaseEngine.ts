@@ -108,7 +108,7 @@ export class PriceIncreaseEngine {
     const annualImpact = Math.round(priceChange * 12);
 
     return {
-      id: `price-alert-${bill.id}-${Date.now()}`,
+      id: `price-alert-${bill.id}`,
       vendor: bill.vendor,
       vendorLogo: bill.logo,
       category: bill.category as 'subscription' | 'utilities' | 'insurance' | 'other',
